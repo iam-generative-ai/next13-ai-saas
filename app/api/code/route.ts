@@ -4,7 +4,7 @@ import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
-
+const Replicate = require('replicate');
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
