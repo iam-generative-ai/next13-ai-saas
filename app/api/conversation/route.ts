@@ -5,6 +5,16 @@ import { Configuration, OpenAIApi } from "openai";
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 
+const Replicate = require('replicate');
+
+// รับ API key จากตัวแปรสภาพแวดล้อม
+const apiKey = process.env.REPLICATE_API_KEY;
+
+// สร้างอินสแตนซ์ Replicate พร้อม API key
+const replicate = new Replicate({ auth: apiKey });
+
+
+
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 });
