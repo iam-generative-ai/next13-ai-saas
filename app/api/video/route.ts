@@ -5,6 +5,8 @@ import { NextResponse } from "next/server";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
+
+const Replicate = require('replicate');
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
 });
