@@ -5,6 +5,12 @@ import { NextResponse } from "next/server";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
+const Replicate = require('replicate');
+// รับ API key จากตัวแปรสภาพแวดล้อม
+const apiKey = process.env.REPLICATE_API_KEY;
+// สร้างอินสแตนซ์ Replicate พร้อม API key
+const replicate = new Replicate({ auth: apiKey });
+
 
 const Replicate = require('replicate');
 const replicate = new Replicate({
